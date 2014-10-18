@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Toggle the Dark Mode in OS X 10.10",
   "license": "MIT",
-  "repository": "sindresorhus/dark-mode",
+  "repository": "sindresorhus/node-dark-mode",
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
