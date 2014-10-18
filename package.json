@@ -1,6 +1,6 @@
 {
   "name": "dark-mode",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Toggle the Dark Mode in OS X 10.10",
   "license": "MIT",
   "repository": "sindresorhus/dark-mode",
