@@ -1,6 +1,5 @@
 'use strict';
 var os = require('os');
-var path = require('path');
 var execFile = require('child_process').execFile;
 var isYosemite = (process.platform === 'darwin' && /^14/.test(os.release()));
 

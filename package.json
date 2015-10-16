@@ -1,20 +1,20 @@
 {
   "name": "dark-mode",
   "version": "1.0.2",
-  "description": "Toggle the Dark Mode in OS X 10.10",
+  "description": "Toggle the Dark Mode in OS X 10.10+",
   "license": "MIT",
   "repository": "sindresorhus/node-dark-mode",
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "http://sindresorhus.com"
+    "url": "sindresorhus.com"
   },
   "bin": "dark-mode",
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "node test.js"
+    "test": "ava"
   },
   "files": [
     "index.js",
@@ -31,6 +31,6 @@
     "menubar"
   ],
   "devDependencies": {
-    "ava": "0.0.4"
+    "ava": "*"
   }
 }

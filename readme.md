@@ -1,13 +1,13 @@
 # node-dark-mode
 
-> Toggle the [Dark Mode](http://www.macworld.co.uk/how-to/mac-software/turn-on-yosemites-dark-mode-on-mac-3534690/) in OS X 10.10 using the [dark-mode](https://github.com/sindresorhus/dark-mode) binary
+> Toggle the [Dark Mode](http://www.macworld.co.uk/how-to/mac-software/turn-on-yosemites-dark-mode-on-mac-3534690/) in OS X 10.10+ using the [dark-mode](https://github.com/sindresorhus/dark-mode) binary
 
 ![](https://github.com/sindresorhus/dark-mode/raw/master/screenshot.gif)
 
 
 ## Install
 
-```sh
+```
 $ npm install --save dark-mode
 ```
 
@@ -15,13 +15,13 @@ $ npm install --save dark-mode
 ## Usage
 
 ```js
-var darkMode = require('dark-mode');
+const darkMode = require('dark-mode');
 
-darkMode.toggle(function (err) {
+darkMode.toggle(err => {
 	console.log('toggled between dark and light mode');
 });
 
-darkMode.toggle(true, function (err) {
+darkMode.toggle(true, err => {
 	console.log('forced dark mode');
 });
 ```
@@ -53,7 +53,7 @@ Whether the current mode is dark.
 
 ## CLI
 
-```sh
+```
 $ npm install --global dark-mode
 ```
 
