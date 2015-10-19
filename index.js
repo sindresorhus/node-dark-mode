@@ -1,40 +1,24 @@
 'use strict';
-var os = require('os');
-var path = require('path');
-var execFile = require('child_process').execFile;
-var requiredOS = process.platform === 'darwin' && Number(os.release().split('.')[0]) >= 14;
-var bin = path.join(__dirname, 'dark-mode');
+const os = require('os');
+const path = require('path');
+const childProcess = require('child_process');
+const pify = require('pify');
+const execFile = pify(childProcess.execFile);
+const requiredOS = process.platform === 'darwin' && Number(os.release().split('.')[0]) >= 14;
+const bin = path.join(__dirname, 'dark-mode');
 
-exports.toggle = function (force, cb) {
+exports.toggle = force => {
 	if (!requiredOS) {
-		throw new Error('OS X 10.10+ only');
+		return Promise.reject(new Error('OS X 10.10+ only'));
 	}
 
-	if (typeof force !== 'boolean') {
-		cb = force;
-		force = null;
-	}
-
-	cb = cb || function () {};
-
-	var args = typeof force === 'boolean' ? ['--mode', force ? 'Dark' : 'Light'] : [];
-
-	execFile(bin, args, function (err) {
-		cb(err);
-	});
+	return execFile(bin, typeof force === 'boolean' ? ['--mode', force ? 'Dark' : 'Light'] : []);
 };
 
-exports.isDark = function (cb) {
+exports.isDark = () => {
 	if (!requiredOS) {
-		throw new Error('OS X 10.10 only');
+		return Promise.reject(new Error('OS X 10.10+ only'));
 	}
 
-	execFile(bin, ['--mode'], function (err, stdout) {
-		if (err) {
-			cb(err);
-			return;
-		}
-
-		cb(null, stdout.trim() === 'Dark');
-	});
+	return execFile(bin, ['--mode']).then(x => x.trim() === 'Dark');
 };

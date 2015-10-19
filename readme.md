@@ -9,52 +9,6 @@ Requires OS X 10.10 or later.
 ![](https://github.com/sindresorhus/dark-mode/raw/master/screenshot.gif)
 
 
-## Install
-
-```
-$ npm install --save dark-mode
-```
-
-
-## Usage
-
-```js
-const darkMode = require('dark-mode');
-
-darkMode.toggle(err => {
-	console.log('toggled between dark and light mode');
-});
-
-darkMode.toggle(true, err => {
-	console.log('forced dark mode');
-});
-```
-
-
-## API
-
-### darkMode.toggle(force, callback)
-
-#### force
-
-Type: `boolean`  
-Default: `null`
-
-Force a specific mode, `true` for dark and `false` for light.
-
-#### callback(error)
-
-### darkMode.isDark(callback)
-
-#### callback(error, isDark)
-
-##### isDark
-
-Type: `boolean`  
-
-Whether the current mode is dark.
-
-
 ## CLI
 
 ```
@@ -73,6 +27,41 @@ dark-mode --mode Light
 dark-mode --mode
 > Light
 ```
+
+
+## API
+
+```
+$ npm install --save dark-mode
+```
+
+```js
+const darkMode = require('dark-mode');
+
+darkMode.toggle().then(() => {
+	console.log('toggled between dark and light mode');
+});
+
+darkMode.toggle(true).then(() => {
+	console.log('forced dark mode');
+});
+
+```
+
+### darkMode.toggle(force)
+
+Returns a promise.
+
+#### force
+
+Type: `boolean`  
+Default: `null`
+
+Force a specific mode, `true` for dark and `false` for light.
+
+### darkMode.isDark()
+
+Returns a promise for a boolean of whether you're in dark mode.
 
 
 ## License

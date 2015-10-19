@@ -30,8 +30,14 @@
     "darkmode",
     "menubar"
   ],
+  "dependencies": {
+    "pify": "^2.2.0"
+  },
   "devDependencies": {
     "ava": "*",
     "xo": "*"
+  },
+  "xo": {
+    "esnext": true
   }
 }
