@@ -1,11 +1,13 @@
 'use strict';
 var os = require('os');
+var path = require('path');
 var execFile = require('child_process').execFile;
-var isYosemite = (process.platform === 'darwin' && /^14/.test(os.release()));
+var requiredOS = process.platform === 'darwin' && Number(os.release().split('.')[0]) >= 14;
+var bin = path.join(__dirname, 'dark-mode');
 
 exports.toggle = function (force, cb) {
-	if (!isYosemite) {
-		throw new Error('OS X 10.10 only');
+	if (!requiredOS) {
+		throw new Error('OS X 10.10+ only');
 	}
 
 	if (typeof force !== 'boolean') {
@@ -17,17 +19,17 @@ exports.toggle = function (force, cb) {
 
 	var args = typeof force === 'boolean' ? ['--mode', force ? 'Dark' : 'Light'] : [];
 
-	execFile('./dark-mode', args, {cwd: __dirname}, function (err) {
+	execFile(bin, args, function (err) {
 		cb(err);
 	});
 };
 
 exports.isDark = function (cb) {
-	if (!isYosemite) {
+	if (!requiredOS) {
 		throw new Error('OS X 10.10 only');
 	}
 
-	execFile('./dark-mode', ['--mode'], {cwd: __dirname}, function (err, stdout) {
+	execFile(bin, ['--mode'], function (err, stdout) {
 		if (err) {
 			cb(err);
 			return;
