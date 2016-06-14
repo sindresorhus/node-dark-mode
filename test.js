@@ -1,8 +1,8 @@
 const test = require('ava');
-const darkMode = require('./');
+const m = require('./');
 
 test(async t => {
-	const dark = await darkMode.isDark();
-	await darkMode.toggle();
-	t.not(dark, await darkMode.isDark());
+	const dark = await m.isDark();
+	await m.toggle();
+	t.not(dark, await m.isDark());
 });

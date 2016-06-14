@@ -54,7 +54,7 @@ Returns a promise.
 
 #### force
 
-Type: `boolean`  
+Type: `boolean`<br>
 Default: `null`
 
 Force a specific mode, `true` for dark and `false` for light.
@@ -66,4 +66,4 @@ Returns a promise for a boolean of whether you're in dark mode.
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
