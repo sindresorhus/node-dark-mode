@@ -1,7 +1,7 @@
 {
   "name": "dark-mode",
   "version": "2.0.0",
-  "description": "Toggle the OS X Dark Mode",
+  "description": "Toggle the macOS Dark Mode",
   "license": "MIT",
   "repository": "sindresorhus/node-dark-mode",
   "author": {
@@ -24,6 +24,7 @@
     "cli-app",
     "cli",
     "bin",
+    "macos",
     "osx",
     "dark",
     "mode",

@@ -1,8 +1,8 @@
 # node-dark-mode
 
-> Toggle the OS X [Dark Mode](http://www.macworld.co.uk/how-to/mac-software/turn-on-yosemites-dark-mode-on-mac-3534690/) using the [dark-mode](https://github.com/sindresorhus/dark-mode) binary
+> Toggle the macOS [Dark Mode](http://www.macworld.co.uk/how-to/mac-software/turn-on-yosemites-dark-mode-on-mac-3534690/) using the [dark-mode](https://github.com/sindresorhus/dark-mode) binary
 
-Requires OS X 10.10 or later.
+Requires macOS 10.10 or later.
 
 **Ensure `System Preferences` → `General` → `Use dark menu bar and Dock` is unchecked.**
 
