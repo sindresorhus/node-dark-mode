@@ -1,6 +1,6 @@
 {
   "name": "dark-mode",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Control the macOS dark mode",
   "license": "MIT",
   "repository": "sindresorhus/node-dark-mode",
