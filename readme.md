@@ -1,67 +1,60 @@
 # node-dark-mode
 
-> Toggle the macOS [Dark Mode](http://www.macworld.co.uk/how-to/mac-software/turn-on-yosemites-dark-mode-on-mac-3534690/) using the [dark-mode](https://github.com/sindresorhus/dark-mode) binary
+> Control the macOS dark mode
 
-Requires macOS 10.10 or later.
+*Requires macOS 10.10 or later.*
 
-**Ensure `System Preferences` → `General` → `Use dark menu bar and Dock` is unchecked.**
-
-![](https://github.com/sindresorhus/dark-mode/raw/master/screenshot.gif)
+<img src="https://github.com/sindresorhus/dark-mode/raw/master/screenshot.gif" width="509">
 
 
-## CLI
-
-```
-$ npm install --global dark-mode
-```
-
-```sh
-# toggle between dark and light mode
-dark-mode
-
-# force a specific mode
-dark-mode --mode Dark
-dark-mode --mode Light
-
-# get the current mode
-dark-mode --mode
-> Light
-```
-
-
-## API
+## Install
 
 ```
 $ npm install --save dark-mode
 ```
 
+
+## Usage
+
 ```js
 const darkMode = require('dark-mode');
 
+darkMode.enable().then(() => {
+	console.log('Enabled dark mode');
+});
+
 darkMode.toggle().then(() => {
-	console.log('toggled between dark and light mode');
+	console.log('Toggled between dark and light mode');
 });
-
-darkMode.toggle(true).then(() => {
-	console.log('forced dark mode');
-});
-
 ```
 
-### darkMode.toggle(force)
 
-Returns a promise.
+## API
 
-#### force
+### darkMode
 
-Type: `boolean`<br>
-Default: `null`
+All the methods return a `Promise`.
+
+#### .enable()
+
+#### .disable()
+
+#### .toggle([force])
+
+##### force
+
+Type: `boolean`
 
 Force a specific mode, `true` for dark and `false` for light.
 
-### darkMode.isDark()
+#### .isDark()
 
-Returns a promise for a boolean of whether you're in dark mode.
+Returns a `Promise<boolean>` of whether you're in dark mode.
+
+
+## Related
+
+- [dark-mode-cli](https://github.com/sindresorhus/dark-mode-cli) - CLI for this module
 
 
 ## License

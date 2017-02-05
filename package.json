@@ -1,7 +1,7 @@
 {
   "name": "dark-mode",
   "version": "2.0.0",
-  "description": "Toggle the macOS Dark Mode",
+  "description": "Control the macOS dark mode",
   "license": "MIT",
   "repository": "sindresorhus/node-dark-mode",
   "author": {
@@ -9,7 +9,6 @@
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
   },
-  "bin": "dark-mode",
   "engines": {
     "node": ">=4"
   },
@@ -17,28 +16,20 @@
     "test": "xo && ava"
   },
   "files": [
-    "index.js",
-    "dark-mode"
+    "index.js"
   ],
   "keywords": [
-    "cli-app",
-    "cli",
-    "bin",
     "macos",
-    "osx",
     "dark",
     "mode",
-    "darkmode",
-    "menubar"
+    "control",
+    "toggle"
   ],
   "dependencies": {
-    "pify": "^2.2.0"
+    "run-jxa": "^1.0.0"
   },
   "devDependencies": {
     "ava": "*",
     "xo": "*"
-  },
-  "xo": {
-    "esnext": true
   }
 }
