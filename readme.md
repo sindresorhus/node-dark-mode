@@ -55,6 +55,7 @@ Returns a `Promise<boolean>` of whether you're in dark mode.
 ## Related
 
 - [dark-mode-cli](https://github.com/sindresorhus/dark-mode-cli) - CLI for this module
+- [alfred-dark-mode](https://github.com/sindresorhus/alfred-dark-mode) - Alfred workflow
 
 
 ## License
