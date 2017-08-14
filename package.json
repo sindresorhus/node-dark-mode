@@ -1,35 +1,35 @@
 {
-  "name": "dark-mode",
-  "version": "3.0.0",
-  "description": "Control the macOS dark mode",
-  "license": "MIT",
-  "repository": "sindresorhus/node-dark-mode",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "macos",
-    "dark",
-    "mode",
-    "control",
-    "toggle"
-  ],
-  "dependencies": {
-    "run-jxa": "^1.0.0"
-  },
-  "devDependencies": {
-    "ava": "*",
-    "xo": "*"
-  }
+	"name": "dark-mode",
+	"version": "3.0.0",
+	"description": "Control the macOS dark mode",
+	"license": "MIT",
+	"repository": "sindresorhus/node-dark-mode",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"macos",
+		"dark",
+		"mode",
+		"control",
+		"toggle"
+	],
+	"dependencies": {
+		"run-jxa": "^1.0.0"
+	},
+	"devDependencies": {
+		"ava": "*",
+		"xo": "*"
+	}
 }

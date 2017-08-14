@@ -10,7 +10,7 @@
 ## Install
 
 ```
-$ npm install --save dark-mode
+$ npm install dark-mode
 ```
 
 
