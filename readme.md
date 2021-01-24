@@ -4,15 +4,13 @@
 
 *Requires macOS 10.10 or later.*
 
-<img src="https://github.com/sindresorhus/dark-mode/raw/master/screenshot.gif" width="509">
-
+<img src="screenshot.gif" width="509">
 
 ## Install
 
 ```
 $ npm install dark-mode
 ```
-
 
 ## Usage
 
@@ -28,7 +26,6 @@ darkMode.toggle().then(() => {
 });
 ```
 
-
 ## API
 
 ### darkMode
@@ -39,7 +36,7 @@ All the methods return a `Promise`.
 
 #### .disable()
 
-#### .toggle([force])
+#### .toggle(force?)
 
 ##### force
 
@@ -51,13 +48,7 @@ Force a specific mode, `true` for dark and `false` for light.
 
 Returns a `Promise<boolean>` of whether you're in dark mode.
 
-
 ## Related
 
 - [dark-mode-cli](https://github.com/sindresorhus/dark-mode-cli) - CLI for this module
 - [alfred-dark-mode](https://github.com/sindresorhus/alfred-dark-mode) - Alfred workflow
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
