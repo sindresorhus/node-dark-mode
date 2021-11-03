@@ -8,22 +8,20 @@
 
 ## Install
 
-```
-$ npm install dark-mode
+```sh
+npm install dark-mode
 ```
 
 ## Usage
 
 ```js
-const darkMode = require('dark-mode');
+import darkMode from 'dark-mode';
 
-darkMode.enable().then(() => {
-	console.log('Enabled dark mode');
-});
+await darkMode.enable();
+console.log('Enabled dark mode');
 
-darkMode.toggle().then(() => {
-	console.log('Toggled between dark and light mode');
-});
+await darkMode.toggle();
+console.log('Toggled between dark and light mode');
 ```
 
 ## API

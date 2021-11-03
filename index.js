@@ -1,17 +1,32 @@
-'use strict';
-const runJxa = require('run-jxa');
+import {runJxa} from 'run-jxa';
 
-const prop = `Application('System Events').appearancePreferences.darkMode`;
+const property = 'Application(\'System Events\').appearancePreferences.darkMode';
 
-exports.enable = () => runJxa(`${prop} = true`);
-exports.disable = () => runJxa(`${prop} = false`);
+const darkMode = {};
 
-exports.toggle = force => {
-	if (typeof force === 'boolean') {
-		return force ? exports.enable() : exports.disable();
-	}
-
-	return runJxa(`${prop} = !${prop}()`);
+darkMode.enable = async () => {
+	await runJxa(`${property} = true`);
 };
 
-exports.isDark = () => runJxa(`return ${prop}()`);
+darkMode.disable = async () => {
+	await runJxa(`${property} = false`);
+};
+
+darkMode.toggle = async force => {
+	if (typeof force === 'boolean') {
+		// eslint-disable-next-line unicorn/prefer-ternary
+		if (force) {
+			await darkMode.enable();
+		} else {
+			await darkMode.disable();
+		}
+
+		return;
+	}
+
+	await runJxa(`${property} = !${property}()`);
+};
+
+darkMode.isDark = async () => runJxa(`return ${property}()`);
+
+export default darkMode;
