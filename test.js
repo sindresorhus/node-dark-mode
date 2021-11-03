@@ -4,7 +4,7 @@ import darkMode from './index.js';
 let isDarkInitially;
 
 test.before(async () => {
-	isDarkInitially = await darkMode.isDark();
+	isDarkInitially = await darkMode.isEnabled();
 });
 
 test.after(async () => {
@@ -12,16 +12,16 @@ test.after(async () => {
 });
 
 test('main', async t => {
-	const dark = await darkMode.isDark();
+	const dark = await darkMode.isEnabled();
 	await darkMode.toggle();
-	t.not(dark, await darkMode.isDark());
+	t.not(dark, await darkMode.isEnabled());
 
 	await darkMode.disable();
-	t.false(await darkMode.isDark());
+	t.false(await darkMode.isEnabled());
 
 	await darkMode.enable();
-	t.true(await darkMode.isDark());
+	t.true(await darkMode.isEnabled());
 
 	await darkMode.toggle(false);
-	t.false(await darkMode.isDark());
+	t.false(await darkMode.isEnabled());
 });

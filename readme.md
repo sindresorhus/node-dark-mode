@@ -40,9 +40,9 @@ All the methods return a `Promise`.
 
 Type: `boolean`
 
-Force a specific mode, `true` for dark and `false` for light.
+Force a specific mode. `true` for dark and `false` for light.
 
-#### .isDark()
+#### .isEnabled()
 
 Returns a `Promise<boolean>` of whether you're in dark mode.
 

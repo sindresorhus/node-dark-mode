@@ -27,6 +27,6 @@ darkMode.toggle = async force => {
 	await runJxa(`${property} = !${property}()`);
 };
 
-darkMode.isDark = async () => runJxa(`return ${property}()`);
+darkMode.isEnabled = async () => runJxa(`return ${property}()`);
 
 export default darkMode;
