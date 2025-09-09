@@ -1,3 +1,4 @@
+import process from 'node:process';
 import darkMode from './index.js';
 
 console.log('Dark Mode Watcher Example');

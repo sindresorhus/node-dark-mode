@@ -1,5 +1,5 @@
+import {spawn} from 'node:child_process';
 import {runJxa} from 'run-jxa';
-import {spawn} from 'child_process';
 
 const property = 'Application(\'System Events\').appearancePreferences.darkMode';
 
@@ -40,11 +40,11 @@ darkMode.watch = callback => {
 
 	const script = `
 		ObjC.import('Cocoa');
-		
+
 		const getState = () => Application('System Events').appearancePreferences.darkMode();
 		let currentState = getState();
 		console.log('STATE:' + currentState);
-		
+
 		ObjC.registerSubclass({
 			name: 'ThemeWatcher',
 			methods: {
@@ -60,7 +60,7 @@ darkMode.watch = callback => {
 				}
 			}
 		});
-		
+
 		const handler = $.ThemeWatcher.new;
 		$.NSDistributedNotificationCenter.defaultCenter.addObserverSelectorNameObject(
 			handler,
@@ -68,7 +68,7 @@ darkMode.watch = callback => {
 			'AppleInterfaceThemeChangedNotification',
 			$.nil
 		);
-		
+
 		const runLoop = $.NSRunLoop.currentRunLoop;
 		while (true) {
 			runLoop.runModeBeforeDate($.NSDefaultRunLoopMode, $.NSDate.dateWithTimeIntervalSinceNow(1.0));
@@ -77,20 +77,20 @@ darkMode.watch = callback => {
 
 	process = spawn('osascript', ['-l', 'JavaScript', '-e', script], {
 		detached: false,
-		stdio: ['ignore', 'pipe', 'pipe']
+		stdio: ['ignore', 'pipe', 'pipe'],
 	});
 
 	const handleOutput = data => {
 		const output = data.toString().trim();
-		
+
 		for (const line of output.split('\n')) {
 			if (line.startsWith('STATE:')) {
-				const isDark = line.substring(6) === 'true';
-				
+				const isDark = line.slice(6) === 'true';
+
 				if (previousState !== undefined && previousState !== isDark) {
 					callback(isDark);
 				}
-				
+
 				previousState = isDark;
 			}
 		}
@@ -114,7 +114,7 @@ darkMode.watch = callback => {
 				process = undefined;
 				previousState = undefined;
 			}
-		}
+		},
 	};
 };
 

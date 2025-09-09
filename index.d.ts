@@ -1,11 +1,9 @@
-declare namespace darkMode {
-	interface Watcher {
-		/**
-		Stop watching for dark mode changes.
-		*/
-		stop(): void;
-	}
-}
+export type Watcher = {
+	/**
+	Stop watching for dark mode changes.
+	*/
+	stop(): void;
+};
 
 declare const darkMode: {
 	/**
@@ -90,7 +88,7 @@ declare const darkMode: {
 	watcher.stop();
 	```
 	*/
-	watch(callback: (isDarkMode: boolean) => void): darkMode.Watcher;
+	watch(callback: (isDarkMode: boolean) => void): Watcher;
 };
 
-export = darkMode;
+export default darkMode;
